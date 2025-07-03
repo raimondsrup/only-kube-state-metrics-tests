@@ -32,4 +32,6 @@ spec:
       enabled: false
     nodeExporter:
       enabled: false
+    operator:
+      enabled: false
     
