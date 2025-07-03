@@ -39,4 +39,8 @@ spec:
             app.kubernetes.io/component: monitoring
     grafana:
       enabled: false
-           
+    prometheus:
+      enabled: false
+    nodeExporter:
+      enabled: false
+    
