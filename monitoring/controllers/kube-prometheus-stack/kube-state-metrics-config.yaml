@@ -1,7 +1,3 @@
-kube-state-metrics:
-  # For kube-prometheus-stacks that are already installed and configured with
-  # custom collectors, commenting out the collectors and extraArgs below will
-  # retain any existing kube-state-metrics configuration.
   collectors: [ ]
   extraArgs:
     - --custom-resource-state-only=true
@@ -275,3 +271,9 @@ kube-state-metrics:
                   ready: [ status, conditions, "[type=Ready]", status ]
                   suspended: [ spec, suspend ]
                   source_name: [ spec, sourceRef, name ]
+
+
+
+
+
+
