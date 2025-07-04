@@ -17,4 +17,4 @@ spec:
   valuesFrom:
     - kind: ConfigMap
       name: kube-prometheus-stack-values
-      valuesKey: values2.yaml
+      valuesKey: kube-state-metrics-config.yaml
