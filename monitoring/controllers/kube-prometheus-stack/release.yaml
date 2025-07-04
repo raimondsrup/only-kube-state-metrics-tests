@@ -1,21 +1,20 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: kube-state-metrics
+  name: kube-prometheus-stack
   namespace: monitoring
 spec:
-  interval: 1h
-  chartRef:
-    kind: OCIRepository
-    name: kube-state-metrics
-    namespace: flux-system
-  install:
-    crds: Create
-  upgrade:
-    crds: CreateReplace
-  driftDetection:
-    mode: enabled
+  releaseName: kube-prometheus-stack
+  chart:
+    spec:
+      chart: kube-prometheus-stack
+      sourceRef:
+        kind: HelmRepository
+        name: prometheus-community
+        namespace: monitoring
+      version: "56.6.1"  # put the version you need here
+  interval: 5m
   valuesFrom:
     - kind: ConfigMap
-      name: flux-kube-state-metrics-config
-      valuesKey: kube-state-metrics-config.yaml
+      name: kube-prometheus-stack-values
+      valuesKey: values2.yaml
