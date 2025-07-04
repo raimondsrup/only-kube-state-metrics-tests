@@ -6,7 +6,7 @@ resources:
   - repository.yaml
   - release.yaml
 configMapGenerator:
-  - name: kube-prometheus-stack-values
+  - name: kube-state-metrics-values
     files:
       - kube-state-metrics-config.yaml
     options:
