@@ -12,7 +12,7 @@ spec:
         kind: HelmRepository
         name: prometheus-community
         namespace: monitoring
-      version: <optional-version>
+      version: "6.1.0" 
   interval: 5m
   valuesFrom:
     - kind: ConfigMap
