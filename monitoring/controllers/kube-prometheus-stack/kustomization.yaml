@@ -10,6 +10,7 @@ configMapGenerator:
     files:
       - kube-state-metrics-config.yaml
     options:
+      disableNameSuffixHash: true
       labels:
         app.kubernetes.io/part-of: flux
         app.kubernetes.io/component: monitoring
