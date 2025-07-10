@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dummy-metrics
+  namespace: monitoring
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dummy-metrics
+  template:
+    metadata:
+      labels:
+        app: dummy-metrics
+    spec:
+      containers:
+      - name: dummy
+        image: python:3.11-slim
+        command:
+        - python3
+        - -c
+        - |
+          from prometheus_client import start_http_server, Counter
+          import time
+          c = Counter('dummy_requests', 'Dummy request count')
+          start_http_server(8000)
+          while True:
+              c.inc()
+              time.sleep(1)
+        ports:
+        - containerPort: 8000
