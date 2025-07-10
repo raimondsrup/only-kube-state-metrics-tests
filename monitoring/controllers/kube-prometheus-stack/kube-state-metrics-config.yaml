@@ -1,7 +1,6 @@
   collectors: [ ]
   extraArgs:
     - --custom-resource-state-only=false
-      --resources=pods,nodes
   rbac:
     extraRules:
       - apiGroups:
