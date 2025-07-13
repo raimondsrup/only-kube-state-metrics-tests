@@ -14,7 +14,7 @@ customResourceState:
     spec:
       resources:
         - groupVersionKind:
-            group: ""             # core group
+            group: "networking.k8s.io"          # core group
             version: v1
             kind: Service
           metricNamePrefix: svcstate
