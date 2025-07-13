@@ -40,6 +40,4 @@
                 each:
                   type: Gauge
                   gauge:
-                    constantValue: 1
-                    labelsFromPath:
-                      name: [metadata, name]
+                    constantValue: 533
