@@ -1,6 +1,6 @@
 collectors: []
 extraArgs:
-  - --custom-resource-state-only=false
+  - --custom-resource-state-only=true
 rbac:
   extraRules:
     - apiGroups:
@@ -25,4 +25,3 @@ customResourceState:
                 type: Gauge
                 gauge:
                   constantValue: 42
-
