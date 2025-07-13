@@ -40,4 +40,5 @@
                 each:
                   type: Gauge
                   gauge:
-                    path: "{.status.observedGeneration}"
+                    path: 
+                      - "{.status.observedGeneration}"
