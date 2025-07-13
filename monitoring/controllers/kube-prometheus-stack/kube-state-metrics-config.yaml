@@ -14,7 +14,7 @@ customResourceState:
     spec:
       resources:
         - groupVersionKind:
-            group: ""
+            group: ""         # empty string here!
             version: v1
             kind: Pod
           metricNamePrefix: podstate
@@ -25,3 +25,4 @@ customResourceState:
                 type: Gauge
                 gauge:
                   constantValue: 42
+
