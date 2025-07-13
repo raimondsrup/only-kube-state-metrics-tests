@@ -40,6 +40,6 @@
                 each:
                   type: Gauge
                   gauge:
-                    valueFromPath: [status, observedGeneration]
+                    constantValue: 1
                     labelsFromPath:
                       name: [metadata, name]
