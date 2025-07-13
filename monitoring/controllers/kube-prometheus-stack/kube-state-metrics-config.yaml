@@ -4,9 +4,9 @@ extraArgs:
 rbac:
   extraRules:
     - apiGroups:
-        - apps
+        - ""  # core API group
       resources:
-        - deployments
+        - services
       verbs: ["list", "watch"]
 customResourceState:
   enabled: true
@@ -14,14 +14,15 @@ customResourceState:
     spec:
       resources:
         - groupVersionKind:
-            group: apps
+            group: ""             # core group
             version: v1
-            kind: Deployment
-          metricNamePrefix: deploystate
+            kind: Service
+          metricNamePrefix: svcstate
           metrics:
-            - name: "deployment_dummy_metric"
-              help: "Dummy constant metric for deployments"
+            - name: "service_dummy_metric"
+              help: "Dummy constant metric for services"
               each:
                 type: Gauge
                 gauge:
                   constantValue: 42
+
