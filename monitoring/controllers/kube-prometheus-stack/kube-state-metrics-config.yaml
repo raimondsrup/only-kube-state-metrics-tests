@@ -38,8 +38,8 @@
               - name: "resource_info"
                 help: "The current state of a Flux Kustomization resource."
                 each:
-                  type: Info
-                  info:
+                  type: Gauge
+                  gauge:
                     labelsFromPath:
                       name: [ metadata, name ]
                 labelsFromPath:
@@ -57,8 +57,8 @@
               - name: "resource_info"
                 help: "The current state of a Flux HelmRelease resource."
                 each:
-                  type: Info
-                  info:
+                  type: Gauge
+                  gauge:
                     labelsFromPath:
                       name: [ metadata, name ]
                 labelsFromPath:
@@ -79,8 +79,8 @@
               - name: "resource_info"
                 help: "The current state of a Flux GitRepository resource."
                 each:
-                  type: Info
-                  info:
+                  type: Gauge
+                  gauge:
                     labelsFromPath:
                       name: [ metadata, name ]
                 labelsFromPath:
@@ -98,8 +98,8 @@
               - name: "resource_info"
                 help: "The current state of a Flux Bucket resource."
                 each:
-                  type: Info
-                  info:
+                  type: Gauge
+                  gauge:
                     labelsFromPath:
                       name: [ metadata, name ]
                 labelsFromPath:
@@ -118,8 +118,8 @@
               - name: "resource_info"
                 help: "The current state of a Flux HelmRepository resource."
                 each:
-                  type: Info
-                  info:
+                  type: Gauge
+                  gauge:
                     labelsFromPath:
                       name: [ metadata, name ]
                 labelsFromPath:
@@ -137,8 +137,8 @@
               - name: "resource_info"
                 help: "The current state of a Flux HelmChart resource."
                 each:
-                  type: Info
-                  info:
+                  type: Gauge
+                  gauge:
                     labelsFromPath:
                       name: [ metadata, name ]
                 labelsFromPath:
@@ -157,8 +157,8 @@
               - name: "resource_info"
                 help: "The current state of a Flux OCIRepository resource."
                 each:
-                  type: Info
-                  info:
+                  type: Gauge
+                  gauge:
                     labelsFromPath:
                       name: [ metadata, name ]
                 labelsFromPath:
@@ -176,8 +176,8 @@
               - name: "resource_info"
                 help: "The current state of a Flux Alert resource."
                 each:
-                  type: Info
-                  info:
+                  type: Gauge
+                  gauge:
                     labelsFromPath:
                       name: [ metadata, name ]
                 labelsFromPath:
@@ -192,8 +192,8 @@
               - name: "resource_info"
                 help: "The current state of a Flux Provider resource."
                 each:
-                  type: Info
-                  info:
+                  type: Gauge
+                  gauge:
                     labelsFromPath:
                       name: [ metadata, name ]
                 labelsFromPath:
@@ -208,8 +208,8 @@
               - name: "resource_info"
                 help: "The current state of a Flux Receiver resource."
                 each:
-                  type: Info
-                  info:
+                  type: Gauge
+                  gauge:
                     labelsFromPath:
                       name: [ metadata, name ]
                 labelsFromPath:
@@ -226,8 +226,8 @@
               - name: "resource_info"
                 help: "The current state of a Flux ImageRepository resource."
                 each:
-                  type: Info
-                  info:
+                  type: Gauge
+                  gauge:
                     labelsFromPath:
                       name: [ metadata, name ]
                 labelsFromPath:
@@ -244,8 +244,8 @@
               - name: "resource_info"
                 help: "The current state of a Flux ImagePolicy resource."
                 each:
-                  type: Info
-                  info:
+                  type: Gauge
+                  gauge:
                     labelsFromPath:
                       name: [ metadata, name ]
                 labelsFromPath:
@@ -262,8 +262,8 @@
               - name: "resource_info"
                 help: "The current state of a Flux ImageUpdateAutomation resource."
                 each:
-                  type: Info
-                  info:
+                  type: Gauge
+                  gauge:
                     labelsFromPath:
                       name: [ metadata, name ]
                 labelsFromPath:
