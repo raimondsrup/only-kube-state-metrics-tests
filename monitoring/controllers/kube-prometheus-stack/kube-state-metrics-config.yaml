@@ -23,7 +23,7 @@
           - imagerepositories
           - imagepolicies
           - imageupdateautomations
-        verbs: [ "list", "watch" ]
+        verbs: ["list", "watch"]
   customResourceState:
     enabled: true
     config:
@@ -42,4 +42,4 @@
                   gauge:
                     valueFromPath: [status, observedGeneration]
                     labelsFromPath:
-                      name: [ metadata, name ]
+                      name: [metadata, name]
