@@ -1,28 +1,27 @@
-  collectors: [ ]
-  extraArgs:
-    - --custom-resource-state-only=true
-  rbac:
-    extraRules:
-      - apiGroups:
-          - helm.toolkit.fluxcd.io
-        resources:
-          - helmreleases
-        verbs: ["list", "watch"]
-  customResourceState:
-    enabled: true
-    config:
-      spec:
-        resources:
-          - groupVersionKind:
-              group: helm.toolkit.fluxcd.io
-              version: v2
-              kind: HelmRelease
-            metricNamePrefix: gotk
-            metrics:
-              - name: "resource_observed_generation"
-                help: "Observed generation of the HelmRelease resource."
-                each:
-                  type: Gauge
-                  gauge:
-                    path: 
-                      - "{.metadata.generation}"                      
+collectors: []
+extraArgs:
+  - --custom-resource-state-only=true
+rbac:
+  extraRules:
+    - apiGroups:
+        - ""
+      resources:
+        - pods
+      verbs: ["list", "watch"]
+customResourceState:
+  enabled: true
+  config:
+    spec:
+      resources:
+        - groupVersionKind:
+            group: ""
+            version: v1
+            kind: Pod
+          metricNamePrefix: podstate
+          metrics:
+            - name: "pod_dummy_metric"
+              help: "Dummy constant metric for pods"
+              each:
+                type: Gauge
+                gauge:
+                  constantValue: 42
