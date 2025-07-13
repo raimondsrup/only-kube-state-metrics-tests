@@ -40,4 +40,4 @@
                 each:
                   type: Gauge
                   gauge:
-                    constantValue: 533
+                    path: "{.status.observedGeneration}"
