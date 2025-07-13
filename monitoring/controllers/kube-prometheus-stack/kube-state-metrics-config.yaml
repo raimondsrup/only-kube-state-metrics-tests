@@ -4,9 +4,9 @@ extraArgs:
 rbac:
   extraRules:
     - apiGroups:
-        - ""
+        - apps
       resources:
-        - pods
+        - deployments
       verbs: ["list", "watch"]
 customResourceState:
   enabled: true
@@ -14,13 +14,13 @@ customResourceState:
     spec:
       resources:
         - groupVersionKind:
-            group: ""         # empty string here!
+            group: apps
             version: v1
-            kind: Pod
-          metricNamePrefix: podstate
+            kind: Deployment
+          metricNamePrefix: deploystate
           metrics:
-            - name: "pod_dummy_metric"
-              help: "Dummy constant metric for pods"
+            - name: "deployment_dummy_metric"
+              help: "Dummy constant metric for deployments"
               each:
                 type: Gauge
                 gauge:
