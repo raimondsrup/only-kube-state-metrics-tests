@@ -38,22 +38,7 @@
                 - name: "resource_info"
                   help: "The current state of a Flux Kustomization resource."
                   each:
-                    type: Gauge
-                    gauge:
-                      value: 21
-                      labelsFromPath:
-                        name: [ metadata, name ]
-            - groupVersionKind:
-                group: helm.toolkit.fluxcd.io
-                version: v2
-                kind: HelmRelease
-              metricNamePrefix: gotk
-              metrics:
-                - name: "resource_info"
-                  help: "The current state of a Flux HelmRelease resource."
-                  each:
-                    type: Gauge
-                    gauge:
-                      value: 21
+                    type: Info
+                    info:
                       labelsFromPath:
                         name: [ metadata, name ]
