@@ -41,9 +41,6 @@
                   type: Gauge
                   gauge:
                     value: 180
-                  labelsFromPath:
-                     name: [ metadata, name ]
-                     namespace: [ metadata, namespace ]
           - groupVersionKind:
               group: helm.toolkit.fluxcd.io
               version: v2
