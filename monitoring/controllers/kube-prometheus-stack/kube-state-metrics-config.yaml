@@ -54,6 +54,6 @@
                   each:
                     type: Gauge
                     gauge:
-                    value: 21
+                      value: 21
                       labelsFromPath:
                         name: [ metadata, name ]
