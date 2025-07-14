@@ -1,35 +1,35 @@
-  collectors: [ ]
-  extraArgs:
-    - --custom-resource-state-only=true
-  rbac:
-    extraRules:
-      - apiGroups:
-          - source.toolkit.fluxcd.io
-          - kustomize.toolkit.fluxcd.io
-          - helm.toolkit.fluxcd.io
-          - notification.toolkit.fluxcd.io
-          - image.toolkit.fluxcd.io
-        resources:
-          - helmreleases
-        verbs: [ "list", "watch" ]
-  customResourceState:
-    enabled: true
-    config:
-      spec:
-        resources:
-          - groupVersionKind:
-              group: helm.toolkit.fluxcd.io
-              version: v2
-              kind: HelmRelease
-            metricNamePrefix: gotk
-            metrics:
-              - name: "resource_info"
-                help: "The current state of a Flux HelmRelease resource."
-                each:
-                  type: Counter
-                  counter:
-                    value: 15
-                    labelsFromPath:
-                      name: [ metadata, name ]
-                labelsFromPath:
-                  ready: [ "[type=Ready]", status ]
+collectors: [ ]
+extraArgs:
+  - --custom-resource-state-only=true
+rbac:
+  extraRules:
+    - apiGroups:
+        - source.toolkit.fluxcd.io
+        - kustomize.toolkit.fluxcd.io
+        - helm.toolkit.fluxcd.io
+        - notification.toolkit.fluxcd.io
+        - image.toolkit.fluxcd.io
+      resources:
+        - helmreleases
+      verbs: [ "list", "watch" ]
+customResourceState:
+  enabled: true
+  config:
+    spec:
+      resources:
+        - groupVersionKind:
+            group: helm.toolkit.fluxcd.io
+            version: v2
+            kind: HelmRelease
+          metricNamePrefix: gotk
+          metrics:
+            - name: "resource_info"
+              help: "The current state of a Flux HelmRelease resource."
+              each:
+                type: Gauge
+                gauge:
+                  value: 1
+                  labelsFromPath:
+                    name: [ metadata, name ]
+              labelsFromPath:
+                ready: [ "[type=Ready]", status ]
