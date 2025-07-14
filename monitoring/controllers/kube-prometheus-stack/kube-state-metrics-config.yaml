@@ -26,8 +26,8 @@
               - name: "resource_info"
                 help: "The current state of a Flux HelmRelease resource."
                 each:
-                  type: Gauge
-                  gauge:
+                  type: Counter
+                  counter:
                     value: 15
                     labelsFromPath:
                       name: [ metadata, name ]
