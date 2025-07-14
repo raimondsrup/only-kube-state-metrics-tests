@@ -1,4 +1,4 @@
- collectors: [ ]
+  collectors: [ ]
   extraArgs:
     - --custom-resource-state-only=true
   rbac:
