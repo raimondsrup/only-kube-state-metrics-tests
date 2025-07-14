@@ -39,7 +39,8 @@
                 help: "The current state of a Flux Kustomization resource."
                 each:
                   type: Gauge
-                  labelsFromPath:
+                  gauge:
+                   labelsFromPath:
                      name: [ metadata, name ]
                      exported_namespace: [ metadata, namespace ]
                      ready: [ status, conditions, "[type=Ready]", status ]
