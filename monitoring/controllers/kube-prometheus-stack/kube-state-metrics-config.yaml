@@ -42,12 +42,6 @@
                     gauge:
                       labelsFromPath:
                         name: [ metadata, name ]
-                  labelsFromPath:
-                    exported_namespace: [ metadata, namespace ]
-                    ready: [ status, conditions, "[type=Ready]", status ]
-                    suspended: [ spec, suspend ]
-                    revision: [ status, lastAppliedRevision ]
-                    source_name: [ spec, sourceRef, name ]
             - groupVersionKind:
                 group: helm.toolkit.fluxcd.io
                 version: v2
@@ -61,12 +55,3 @@
                     gauge:
                       labelsFromPath:
                         name: [ metadata, name ]
-                  labelsFromPath:
-                    exported_namespace: [ metadata, namespace ]
-                    ready: [ status, conditions, "[type=Ready]", status ]
-                    suspended: [ spec, suspend ]
-                    revision: [ status, history, "0", chartVersion ]
-                    chart_name: [ status, history, "0", chartName ]
-                    chart_app_version: [ status, history, "0", appVersion ]
-                    chart_ref_name: [ spec, chartRef, name ]
-                    chart_source_name: [ spec, chart, spec, sourceRef, name ]
