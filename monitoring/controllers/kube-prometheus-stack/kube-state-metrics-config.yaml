@@ -38,8 +38,9 @@
               - name: "resource_info"
                 help: "The current state of a Flux Kustomization resource."
                 each:
-                  type: Summary
-                  summary:
+                  type: Gauge
+                  gauge:
+                    value: 180
                     labelsFromPath:
                       name: [ metadata, name ]
                 labelsFromPath:
