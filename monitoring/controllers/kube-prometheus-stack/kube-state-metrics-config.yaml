@@ -23,7 +23,6 @@
             - imagerepositories
             - imagepolicies
             - imageupdateautomations
-          verbs: ["list", "watch"]
     customResourceState:
       enabled: true
       config:
@@ -38,8 +37,8 @@
                 - name: "resource_info"
                   help: "The current state of a Flux Kustomization resource."
                   each:
-                    type: Gauge
-                    gauge:
+                    type: Untyped
+                    untyped:
                       value: 1
                       labelsFromPath:
                         name: [ name ]
