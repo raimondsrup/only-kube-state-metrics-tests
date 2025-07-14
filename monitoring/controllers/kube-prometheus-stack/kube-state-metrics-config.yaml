@@ -42,12 +42,8 @@
                   gauge:
                     value: 180
                   labelsFromPath:
-                    name: [ metadata, name ]
-                    exported_namespace: [ metadata, namespace ]
-                    ready: [ status, conditions, "[type=Ready]", status ]
-                    suspended: [ spec, suspend ]
-                    revision: [ status, lastAppliedRevision ]
-                    source_name: [ spec, sourceRef, name ]
+                     name: [ metadata, name ]
+                     namespace: [ metadata, namespace ]
           - groupVersionKind:
               group: helm.toolkit.fluxcd.io
               version: v2
