@@ -38,8 +38,8 @@
               - name: "resource_info"
                 help: "The current state of a Flux Kustomization resource."
                 each:
-                  type: Untyped
-                  untyped:
+                  type: Summary
+                  summary:
                     labelsFromPath:
                       name: [ metadata, name ]
                 labelsFromPath:
