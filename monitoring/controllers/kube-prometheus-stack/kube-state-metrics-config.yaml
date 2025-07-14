@@ -39,15 +39,13 @@
                 help: "The current state of a Flux Kustomization resource."
                 each:
                   type: Gauge
-                  gauge:
-                    labelsFromPath:
-                      name: [ metadata, name ]
-                labelsFromPath:
-                  exported_namespace: [ metadata, namespace ]
-                  ready: [ status, conditions, "[type=Ready]", status ]
-                  suspended: [ spec, suspend ]
-                  revision: [ status, lastAppliedRevision ]
-                  source_name: [ spec, sourceRef, name ]
+                  labelsFromPath:
+                     name: [ metadata, name ]
+                     exported_namespace: [ metadata, namespace ]
+                     ready: [ status, conditions, "[type=Ready]", status ]
+                     suspended: [ spec, suspend ]
+                     revision: [ status, lastAppliedRevision ]
+                     source_name: [ spec, sourceRef, name ]
           - groupVersionKind:
               group: helm.toolkit.fluxcd.io
               version: v2
