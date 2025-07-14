@@ -28,6 +28,7 @@
                 each:
                   type: Gauge
                   gauge:
+                    value: 15
                     labelsFromPath:
                       name: [ metadata, name ]
                 labelsFromPath:
