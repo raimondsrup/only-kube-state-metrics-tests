@@ -26,7 +26,6 @@
               - name: "resource_info"
                 help: "The current state of a Flux HelmRelease resource."
                 each:
-                  type: Info
                   info:
                     labelsFromPath:
                       name: [ metadata, name ]
