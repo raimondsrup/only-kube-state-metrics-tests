@@ -37,8 +37,7 @@
                 - name: "resource_info"
                   help: "The current state of a Flux Kustomization resource."
                   each:
-                    type: Untyped
-                    untyped:
-                      value: 1
+                    type: Info
+                    info:
                       labelsFromPath:
                         name: [ name ]
