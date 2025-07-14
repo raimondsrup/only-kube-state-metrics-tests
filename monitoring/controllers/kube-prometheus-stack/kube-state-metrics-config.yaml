@@ -26,8 +26,9 @@
               - name: "resource_info"
                 help: "The current state of a Flux HelmRelease resource."
                 each:
-                  info:
+                  type: Gauge
+                  gauge:
                     labelsFromPath:
                       name: [ metadata, name ]
                 labelsFromPath:
-                  ready: [ status, conditions, "[type=Ready]", status ]
+                  ready: [ "[type=Ready]", status ]
