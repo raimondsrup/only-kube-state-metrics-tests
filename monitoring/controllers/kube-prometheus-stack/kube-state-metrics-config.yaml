@@ -30,6 +30,23 @@
       spec:
         resources:
           - groupVersionKind:
+              group: drupal.webservices.cern.ch
+              version: v1alpha1
+              kind: DrupalSite
+            labelsFromPath:
+               name: ["metadata", "name"]
+               namespace: ["metadata", "namespace"]
+            metrics:
+            - name: drupalsite_status_conditions
+              help: "Exposes the status conditions of this DrupalSite"
+              each:
+                 type: Gauge
+                 gauge:
+                   path: [status, conditions]
+                labelsFromPath:
+                   type: ["type"]
+                   valueFrom: ["status"]
+          - groupVersionKind:
               group: kustomize.toolkit.fluxcd.io
               version: v1
               kind: Kustomization
