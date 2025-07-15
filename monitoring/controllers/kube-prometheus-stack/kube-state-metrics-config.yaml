@@ -30,22 +30,25 @@
       spec:
         resources:
           - groupVersionKind:
-              group: drupal.webservices.cern.ch
-              version: v1alpha1
-              kind: DrupalSite
-            labelsFromPath:
-               name: ["metadata", "name"]
-               namespace: ["metadata", "namespace"]
+              group: source.toolkit.fluxcd.io
+              version: v1beta2
+              kind: Bucket
+            metricNamePrefix: gotk
             metrics:
-            - name: drupalsite_status_conditions
-              help: "Exposes the status conditions of this DrupalSite"
-              each:
-                 type: Gauge
-                 gauge:
-                   path: [status, conditions]
+              - name: "resource_size_bytes"
+                help: "The reported size in bytes of the FluxCD Bucket source (example: from status.size)."
+                each:
+                  type: Gauge
+                  gauge:
+                     valueFromPath: [ status, size ]
                 labelsFromPath:
-                   type: ["type"]
-                   valueFrom: ["status"]
+                    exported_namespace: [ metadata, namespace ]
+                    name: [ metadata, name ]
+                    ready: [ status, conditions, "[type=Ready]", status ]
+                    revision: [ status, artifact, revision ]
+                    url: [ status, artifact, url ]
+                    bucket_name: [ spec, bucketName ]
+                    endpoint: [ spec, endpoint ]
           - groupVersionKind:
               group: kustomize.toolkit.fluxcd.io
               version: v1
