@@ -38,8 +38,8 @@
               - name: "resource_size_bytes"
                 help: "The reported size in bytes of the FluxCD Bucket source (example: from status.size)."
                 each:
-                  type: Gauge
-                  gauge:
+                  type: Info
+                  info:
                      valueFromPath: [ status, size ]
                 labelsFromPath:
                     exported_namespace: [ metadata, namespace ]
