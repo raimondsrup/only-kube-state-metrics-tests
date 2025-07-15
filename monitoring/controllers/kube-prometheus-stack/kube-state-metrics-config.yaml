@@ -35,14 +35,19 @@
               kind: Kustomization
             metricNamePrefix: gotk
             metrics:
-              - name: "resource_info"
-                help: "The current state of a Flux Kustomization resource."
+              - name: "resource_replicas"
+                help: "The desired number of replicas in a Flux Kustomization resource."
                 each:
                   type: Gauge
                   gauge:
-                    value: 180
-                  labelsFromPath:
-                    name: [metadata, name]
+                    valueFromPath: [ spec, replicas ]
+                labelsFromPath:
+                    exported_namespace: [ metadata, namespace ]
+                    name: [ metadata, name ]
+                    ready: [ status, conditions, "[type=Ready]", status ]
+                    suspended: [ spec, suspend ]
+                    revision: [ status, lastAppliedRevision ]
+                    source_name: [ spec, sourceRef, name ]
           - groupVersionKind:
               group: helm.toolkit.fluxcd.io
               version: v2
